@@ -1,7 +1,9 @@
 import { GoogleGenAI, Type, Schema } from "@google/genai";
 import { LessonData, QuizQuestion, LessonRequest } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({
+  apiKey: import.meta.env.VITE_API_KEY,
+});
 
 const lessonSchema: Schema = {
   type: Type.OBJECT,
